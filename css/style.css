@@ -4,6 +4,7 @@
 
 body {
   margin: 0;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .container {
@@ -18,12 +19,167 @@ body {
   justify-content: center;
   align-items: center;
   border: 1px solid #333;
+  z-index: 1;
 }
 .container button {
   padding: 0.75rem 1rem;
   border: none;
   cursor: pointer;
   font-size: 20px;
+}
+.container #btn1 {
+  background-color: #000;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid #fff;
+}
+.container #btn1:hover {
+  transform: translate(-8px, -8px);
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+  box-shadow: 8px 8px 0px #000;
+}
+.container #btn2 {
+  background-color: #000;
+  color: #fff;
+  position: relative;
+  border: 1px solid #fff;
+  transition: all 0.3s ease-in-out;
+  top: 0;
+  left: 0;
+}
+.container #btn2:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  border: 1px solid #fff;
+  z-index: -1;
+  bottom: 0;
+  right: 0;
+  transition: all 0.3s ease-in-out;
+}
+.container #btn2:hover {
+  background-color: #fff;
+  color: #000;
+  border-color: #000;
+  top: -8px;
+  left: -8px;
+}
+.container #btn2:hover:before {
+  bottom: -8px;
+  right: -8px;
+}
+.container #btn3 {
+  background-color: #20981c;
+  color: #fff;
+  border: 1px solid #000;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+.container #btn3:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  transform: skew(-25deg) translateX(-28px);
+  transition: all 0.3s ease-in-out;
+}
+.container #btn3:hover {
+  background-color: rgb(41.0666666667, 195.0666666667, 35.9333333333);
+}
+.container #btn3:hover::before {
+  transform: skew(-25deg) translateX(1200%);
+}
+.container #shape1 {
+  width: 200px;
+  height: 200px;
+  background-color: #ccc;
+  position: relative;
+}
+.container #shape1:hover {
+  color: #000;
+}
+.container #shape1:hover::before {
+  opacity: 1;
+}
+.container #shape1::before {
+  content: "Hello!";
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: yellow;
+  font-size: 1.5rem;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+.container #shape2 {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  display: block;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 100%);
+  animation: bounce infinite 4s linear;
+  transform: translateX(0%) translateX(0%);
+}
+@keyframes bounce {
+  0% {
+    background-color: red;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 100%);
+    top: 0;
+    left: 0;
+  }
+  25% {
+    background-color: blue;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 100%);
+    border-radius: 50%;
+    top: 0;
+    left: calc(100% - 100px);
+  }
+  50% {
+    background-color: green;
+    border-radius: 0;
+    clip-path: polygon(0% 100%, 50% 0%, 100% 100%, 100% 100%, 100% 100%);
+    top: calc(100% - 100px);
+    left: calc(100% - 100px);
+  }
+  75% {
+    background-color: pink;
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+    top: calc(100% - 100px);
+    left: 0;
+  }
+  100% {
+    background-color: red;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 100%);
+    top: 0;
+    left: 0;
+  }
+}
+.container #figure1 img {
+  position: relative;
+  z-index: 1;
+}
+.container #figure1 figcaption {
+  padding: 0.25rem 0.5rem;
+  background-color: pink;
+  top: -30px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+.container #figure1:hover figcaption {
+  top: -4px;
 }
 
 /*# sourceMappingURL=style.css.map */
